@@ -36,7 +36,7 @@ jobs:
         run: mvn --batch-mode --update-snapshots -DskipTests=true verify
 
       - name: Create directory for artifacts & copy artifacts
-        run: mkdir staging && cp target/*.jar staging && mv staging/*.jar staging/app.jar
+        run: mkdir staging && cp target/*.jar staging
 
       - name: print staged files
         run: cd staging && ls -l
@@ -50,6 +50,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: Package
+          path: staging
+
       - name: print staged files
         run: cd staging && ls -l
 
@@ -58,4 +63,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          document: staging/devOps-lab1-1.0-SNAPSHOT.jar
+          document: staging/*.jar
