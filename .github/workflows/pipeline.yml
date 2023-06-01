@@ -38,7 +38,21 @@ jobs:
       - name: Create directory for artifacts & copy artifacts
         run: mkdir staging && cp target/*.jar staging
 
+      - name: print staged files
+        run: cd staging && ls -l
+
       - uses: actions/Upload-artifact@v3
         with:
           name: Package
           path: staging
+
+  send telegram:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          document: staging/devOps-lab1-1.0-SNAPSHOT.jar
