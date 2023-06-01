@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.devopslab1.view.ViewController">
+
+   <Label layoutX="71.0" layoutY="41.0" styleClass="field-label" text="Фамилия" />
+   <Label layoutX="288.0" layoutY="41.0" styleClass="field-label" text="Имя" />
+   <Label layoutX="473.0" layoutY="41.0" styleClass="field-label" text="Отчество" />
+   <Label layoutX="251.0" layoutY="115.0" styleClass="field-label" text="Дата рождения" />
+   <TextField fx:id="surnameTF" layoutX="28.0" layoutY="76.0" promptText="Иванов" />
+   <TextField fx:id="nameTF" layoutX="226.0" layoutY="76.0" promptText="Иван" />
+   <TextField fx:id="patronymicTF" layoutX="424.0" layoutY="76.0" promptText="Иванович" />
+   <DatePicker fx:id="datePicker" layoutX="216.0" layoutY="148.0" promptText="21.11.1999" />
+   <Button fx:id="enterButton" layoutX="202.0" layoutY="219.0" mnemonicParsing="false" onAction="#onEnterButtonClicked" text="Получить информацию" />
+   <Label fx:id="warningText" alignment="CENTER" layoutX="16.0" layoutY="181.0" prefHeight="25.0" prefWidth="573.0" styleClass="warning" />
+   <Label fx:id="answerText" alignment="CENTER" layoutX="28.0" layoutY="268.0" prefHeight="82.0" prefWidth="551.0" styleClass="answer" />
+</AnchorPane>

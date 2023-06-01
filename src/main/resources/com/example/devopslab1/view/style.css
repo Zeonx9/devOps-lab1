@@ -1,0 +1,20 @@
+.warning {
+    -fx-text-fill: red;
+    -fx-font-size: 16.0;
+}
+
+.button {
+    -fx-font-size: 16.0;
+    -fx-text-fill: white;
+    -fx-background-color: purple;
+}
+
+.field-label {
+    -fx-font-size: 14.0;
+    -fx-text-fill: gray;
+}
+
+.answer {
+    -fx-text-fill: green;
+    -fx-font-size: 16.0;
+}
