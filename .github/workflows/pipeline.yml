@@ -36,7 +36,7 @@ jobs:
         run: mvn --batch-mode --update-snapshots -DskipTests=true verify
 
       - name: Create directory for artifacts & copy artifacts
-        run: mkdir staging && cp target/*.jar staging
+        run: mkdir staging && cp target/*.jar staging && mv staging/*.jar staging/app.jar
 
       - name: print staged files
         run: cd staging && ls -l
@@ -50,6 +50,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: print staged files
+        run: cd staging && ls -l
+
       - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
