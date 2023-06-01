@@ -1,6 +1,6 @@
 name: Java Build
 
-on: push
+on: [push, pull-request]
 
 jobs:
   build:
@@ -14,6 +14,17 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+
+      - name: Lint edited and new files
+        uses: github/super-linter@v5
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: master
+          VALIDATE_JAVA: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests with Maven
+        run: mvn --batch-mode --update-snapshots test
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
