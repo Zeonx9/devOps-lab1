@@ -46,7 +46,7 @@ jobs:
           name: Package
           path: staging
 
-  send telegram:
+  send:
     needs: build
     runs-on: ubuntu-latest
     steps:
