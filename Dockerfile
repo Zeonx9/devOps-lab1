@@ -1,6 +1,5 @@
-FROM openjdk:17
+FROM maven:3.8.5-openjdk-17
 
-COPY target/devOps-lab1-1.0-SNAPSHOT.jar app.jar
-COPY libs/javafx-sdk-17.0.2 javafx-sdk-17
-
-ENTRYPOINT java --module-path /javafx-sdk-17/lib --add-modules=javafx.controls,javafx.fxml -jar app.jar -Dprism.verbose=true
+COPY src /home/app/src
+COPY pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean javafx:run
