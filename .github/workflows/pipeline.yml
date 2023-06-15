@@ -85,4 +85,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: print something
-        run: echo Hello self-hosted
+        run: echo Hello self-hosted again
