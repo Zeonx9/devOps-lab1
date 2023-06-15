@@ -55,7 +55,7 @@ jobs:
           name: Package
           path: staging
 
-  docker:
+  dockerize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -96,7 +96,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           document: staging/*.jar
 
-  deploy-sef-hosted:
+  deploy:
     needs: docker
     runs-on: self-hosted
     steps:
