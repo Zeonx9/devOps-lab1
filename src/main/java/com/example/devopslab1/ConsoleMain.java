@@ -12,7 +12,8 @@ import java.util.StringTokenizer;
 
 public class ConsoleMain {
     public static void main(String[] args) {
-        Scanner sc = new Scanner("Муштуков Артём Вадимович\n09.01.2003");
+
+        Scanner sc = new Scanner(System.in);
 
         String sur = "", name = "", pat = "";
         while (sur.isBlank()) {
