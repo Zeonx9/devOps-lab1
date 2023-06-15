@@ -97,7 +97,7 @@ jobs:
           document: staging/*.jar
 
   deploy:
-    needs: docker
+    needs: dockerize
     runs-on: self-hosted
     steps:
       - name: pull docker image
