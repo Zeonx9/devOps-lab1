@@ -86,3 +86,6 @@ jobs:
     steps:
       - name: print something
         run: echo Hello self-hosted again
+
+      - name: check docker version
+        run: docker version
