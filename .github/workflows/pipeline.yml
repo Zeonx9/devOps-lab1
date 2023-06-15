@@ -80,3 +80,9 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           document: staging/*.jar
+
+  test-sef-hosted:
+    runs-on: self-hosted
+    steps:
+      - name: print something
+        run: echo Hello self-hosted

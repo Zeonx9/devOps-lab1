@@ -7,4 +7,4 @@ RUN mvn clean package
 FROM openjdk:17-jdk-slim
 WORKDIR /application
 COPY --from=build ./target/*.jar ./application/lab.jar
-ENTRYPOINT ["java","-jar","./application/lab.jar"]
+ENTRYPOINT ["java","-Dfile.encoding=UTF8", "-jar","./application/lab.jar"]
