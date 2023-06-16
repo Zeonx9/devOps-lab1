@@ -14,4 +14,4 @@
 Выполнение этого pipeline производится при любом pull-request или push. 
 
 upd:
-7. Деплой на self-hosted runner 
+7. Деплой на self-hosted runner  
