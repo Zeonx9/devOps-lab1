@@ -16,23 +16,17 @@ public class ConsoleMain {
         Scanner sc = new Scanner(System.in);
 
         String sur = "", name = "", pat = "";
+        LocalDate date = null;
         while (sur.isBlank()) {
             try {
-                System.out.println("Введите свое ФИО на русском языке");
+                System.out.println("Введите свое ФИО на русском языке и дату рождения");
                 StringTokenizer st = new StringTokenizer(sc.nextLine());
                 sur = st.nextToken();
                 name = st.nextToken();
                 pat = st.nextToken();
+                date = LocalDate.parse(st.nextToken(), DateTimeFormatter.ofPattern("dd.MM.yyyy"));
             } catch (NoSuchElementException e) {
-                System.out.println("Строка должна содержать 3 русских слова.");
-            }
-        }
-
-        LocalDate date = null;
-        while (date == null) {
-            try {
-                System.out.println("Введите вашу дату рождения");
-                date = LocalDate.parse(sc.nextLine(), DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+                System.out.println("Строка должна содержать 3 русских слова и дату");
             } catch (DateTimeParseException e) {
                 System.out.println("формат даты: дд.ММ.гггг");
             }

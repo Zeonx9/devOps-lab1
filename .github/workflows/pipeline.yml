@@ -104,4 +104,4 @@ jobs:
         run: docker pull ${{ env.DOCKER_IMAGE_TAG }}
 
       - name: run the container
-        run: echo "Муштуков Артём Вадимович\n09.01.2003" | docker run -i ${{ env.DOCKER_IMAGE_TAG }}
+        run: echo "Муштуков Артём Вадимович 09.01.2003" | docker run -i ${{ env.DOCKER_IMAGE_TAG }}
